@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCENIC</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="/reset.css" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <div class="nav__logo">Scenic</div>
+        <div class="nav__icon--menu"><i class="fas fa-bars"></i></div>
+        <ul class="nav__navigation">
+          <li><a href="/" class="nav__item">Home</a></li>
+          <li><a href="/places" class="nav__item">Places</a></li>
+          <li><a class="nav__item">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <%- body %>
+    <aside class="backdrop"></aside>
+    <footer class="footer">
+      <p class="footer__para">
+        Photos on
+        <a
+          class="footer__item footer__item--para"
+          href="https://unsplash.com/s/photos/iceland?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
+          >Unsplash</a
+        >
+        By
+      </p>
+      <div class="footer__items">
+        <a
+          class="footer__item"
+          href="https://unsplash.com/@lucabravo?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
+          >Luca Bravo</a
+        >
+        <a
+          class="footer__item"
+          href="https://unsplash.com/@serey?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
+          >Serey Morm</a
+        >
+        <a
+          class="footer__item"
+          href="https://unsplash.com/@jonflobrant?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
+          >Jon Flobrant</a
+        >
+        <a
+          class="footer__item"
+          href="https://unsplash.com/@onevibe?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
+          >Aaron Greenwood</a
+        >
+        <a
+          class="footer__item"
+          href="https://unsplash.com/@davidmarcu?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
+          >David Marcu</a
+        >
+      </div>
+    </footer>
+    <script src="/utilities.js"></script>
+    <script src="/code.js"></script>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+<% layout('./layouts/boilerplate') %>
+<main class="content">
+  <h2 class="content__title heading-2"><%= place.title %></h2>
+  <hr class="content__hr" />
+  <p class="content__paragraph">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque doloribus
+    ex nemo ea amet a repellendus ipsa voluptate aspernatur, delectus atque sed
+    voluptatem iure numquam iusto molestias eum? Suscipit, illo.
+  </p>
+  <div class="content__capsule">
+    <figure class="content__fig animate-on-scroll">
+      <img
+        src="<%= place.img1 %>"
+        alt="Trulli"
+        class="content__img animate-on-scroll"
+      />
+      <figcaption>Fig.1 - <%= place.title %>, <%= place.country %>.</figcaption>
+    </figure>
+    <p class="content__paragraph content__paragraph--1">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque doloribus
+      ex nemo ea amet a repellendus ipsa voluptate aspernatur, delectus atque
+      sed voluptatem iure numquam iusto molestias eum? Suscipit, illo. Lorem
+      ipsum dolor sit amet consectetur adipisicing elit. Sit, eius aspernatur ut
+      consequatur veniam cumque quam minima rem dicta eaque optio est culpa
+      recusandae maiores hic necessitatibus quasi unde distinctio.
+    </p>
+  </div>
+  <div class="content__capsule">
+    <figure class="content__fig animate-on-scroll">
+      <img
+        src="<%= place.img2 %>"
+        alt="Trulli"
+        class="content__img animate-on-scroll"
+      />
+      <figcaption>Fig.2 - <%= place.title %>, <%= place.country %>.</figcaption>
+    </figure>
+    <p class="content__paragraph content__paragraph--2">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque doloribus
+      ex nemo ea amet a repellendus ipsa voluptate aspernatur, delectus atque
+      sed voluptatem iure numquam iusto molestias eum? Suscipit, illo. Lorem
+      ipsum dolor sit amet consectetur adipisicing elit. Sit, eius aspernatur ut
+      consequatur veniam cumque quam minima rem dicta eaque optio est culpa
+      recusandae maiores hic necessitatibus quasi unde distinctio.
+    </p>
+  </div>
+  <div class="content__capsule">
+    <figure class="content__fig animate-on-scroll">
+      <img
+        src="<%= place.img3 %>"
+        alt="Trulli"
+        class="content__img animate-on-scroll"
+      />
+      <figcaption>Fig.3 - <%= place.title %>, <%= place.country %>.</figcaption>
+    </figure>
+
+    <p class="content__paragraph content__paragraph--3">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque doloribus
+      ex nemo ea amet a repellendus ipsa voluptate aspernatur, delectus atque
+      sed voluptatem iure numquam iusto molestias eum? Suscipit, illo. Lorem
+      ipsum dolor sit amet consectetur adipisicing elit. Sit, eius aspernatur ut
+      consequatur veniam cumque quam minima rem dicta eaque optio est culpa
+      recusandae maiores hic necessitatibus quasi unde distinctio.
+    </p>
+  </div>
+  <a href="/places" class="btn btn--primary">Go Back</a>
+</main>
+<div class="comments">
+  <h2 class="comments__heading">Comments Section</h2>
+  <ul class="comments__list">
+    <% for(let comment of comments) { %>
+    <li class="comments__comment">
+      <a class="comments__remove"><i class="fas fa-times"></i></a>
+      <form
+        action="/places/<%=comment.placeId%>?_method=DELETE"
+        method="POST"
+        class="delete"
+      >
+        <button class="comments__remove">
+          <i class="fas fa-times"></i>
+        </button>
+      </form>
+
+      <span class="comments__name"><%= comment.name %></span>
+      <img src="/images/user.png" alt="user image" class="comments__img" />
+      <span class="comments__text"><%= comment.text %></span
+      ><span class="comments__time"><%= comment.time.toLocaleString() %></span>
+    </li>
+    <% } %>
+
+    <li class="comments__comment">
+      <span class="comments__name">Zara</span>
+      <img src="/images/user.png" alt="user image" class="comments__img" />
+      <span class="comments__text">It was an amazing place to go to.</span
+      ><span class="comments__time">10:78</span>
+    </li>
+    <li class="comments__comment">
+      <span class="comments__name">Zara</span>
+      <img src="/images/user.png" alt="user image" class="comments__img" />
+      <span class="comments__text"
+        >It was an amazing place to go to.gfvh gkgkj gkgbjg nhfhgbjvgjgj jhbgghj
+        ngkhjk lhkhlnh liniluhik lumlijnljil hlihnlhklh k,lhjlhl khlkhk
+        jhkjh,kjn ,kjhj jhb hghb jhbjhb jhj</span
+      ><span class="comments__time">10:78</span>
+    </li>
+    <li class="comments__comment">
+      <span class="comments__name">Zara</span>
+      <img src="/images/user.png" alt="user image" class="comments__img" />
+      <span class="comments__text">It was an amazing place to go to.</span
+      ><span class="comments__time">10:78</span>
+    </li>
+  </ul>
+  <form method="POST" action="/places/<%= place._id %>" class="comments__form">
+    <input
+      type="text"
+      placeholder="Your name ..."
+      class="comments__field"
+      name="comment[name]"
+      required
+    />
+    <!-- 
+        <input
+          type="text"
+          placeholder="Your comments ..."
+          class="comments__field"
+          name="comment[text]"
+          required
+        /> -->
+    <textarea
+      class="comments__textarea"
+      placeholder="Comments ... "
+      name="comment[text]"
+      aria-required="true"
+      required
+    ></textarea>
+    <button class="comments__btn btn">Submit</button>
+  </form>
+</div>
