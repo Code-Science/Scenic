@@ -321,6 +321,10 @@ body {
   color: rgb(235, 235, 235);
   margin-top: 2rem;
 }
+.comments__btn:hover {
+  background-color: rgba(175, 32, 32, 0.918);
+  color: white;
+}
 
 /*  Footer style code */
 

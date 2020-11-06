@@ -69,9 +69,8 @@
   <ul class="comments__list">
     <% for(let comment of comments) { %>
     <li class="comments__comment">
-      <a class="comments__remove"><i class="fas fa-times"></i></a>
       <form
-        action="/places/<%=comment.placeId%>?_method=DELETE"
+        action="/places/<%=comment.placeId%>/comments/<%=comment._id%>?_method=DELETE"
         method="POST"
         class="delete"
       >
@@ -109,7 +108,11 @@
       ><span class="comments__time">10:78</span>
     </li>
   </ul>
-  <form method="POST" action="/places/<%= place._id %>" class="comments__form">
+  <form
+    method="POST"
+    action="/places/<%= place._id %>/comments"
+    class="comments__form"
+  >
     <input
       type="text"
       placeholder="Your name ..."
@@ -117,14 +120,6 @@
       name="comment[name]"
       required
     />
-    <!-- 
-        <input
-          type="text"
-          placeholder="Your comments ..."
-          class="comments__field"
-          name="comment[text]"
-          required
-        /> -->
     <textarea
       class="comments__textarea"
       placeholder="Comments ... "
