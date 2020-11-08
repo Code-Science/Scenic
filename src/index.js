@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override');
+const compression = require('compression');
 const { commentSchema } = require('./JoiSchemas/schemas');
 const catchAsync = require('./utils/catchAsync');
 const ExpressError = require('./utils/ExpressError');
@@ -37,6 +38,7 @@ app.set('views', './src/views');
 app.use(express.static('src/public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+app.use(compression());
 
 const validateComment = (req, res, next) => {
   const { error } = commentSchema.validate(req.body);
