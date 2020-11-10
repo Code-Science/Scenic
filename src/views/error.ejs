@@ -1,4 +1,7 @@
 <% layout('./layouts/boilerplate') %>
-
-<h1>this is error page</h1>
-<p><%= err.message %></p>
+<main class="error-container">
+  <div class="error__message">
+    <h1>Error Message</h1>
+    <p><%= err.message %>!</p>
+  </div>
+</main>

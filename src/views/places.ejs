@@ -1,5 +1,6 @@
 <% layout('./layouts/boilerplate') %>
 <main class="cards">
+  <h2 class="cards__heading">Our Favourite Picks</h2>
   <% for(let place of places) { %>
   <div class="card animate-on-scroll">
     <img src="<%= place.img1 %>" class="card__img" alt="..." />

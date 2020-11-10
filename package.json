@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "NODE_ENV=test mocha ./test/**",
     "start": "node ./src/index.js"
   },
   "author": "Uzma ali",
@@ -19,6 +19,7 @@
     "mongoose": "^5.10.11"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
     "eslint": "^7.12.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-node": "^4.1.0",
@@ -26,6 +27,8 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.1.2"
+    "mocha": "^8.2.1",
+    "prettier": "^2.1.2",
+    "supertest": "^6.0.1"
   }
 }

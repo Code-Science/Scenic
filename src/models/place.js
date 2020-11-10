@@ -11,4 +11,4 @@ const PlaceSchema = new Schema({
   img4: String,
 });
 
-module.exports = mongoose.model('Place', PlaceSchema);
+module.exports = mongoose.model('place', PlaceSchema);
