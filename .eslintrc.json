@@ -16,6 +16,7 @@
         "eslint-plugin-prettier"
     ],
     "rules": {
+        "global-require":"off",
         "no-unused-vars": "warn",
         "prettier/prettier":"error",
         "func-names": "off",

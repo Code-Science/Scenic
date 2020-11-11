@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 const mongoose = require('mongoose');
 
 let url = process.env.dataBaseURL || 'mongodb://localhost:27017/scenic';
