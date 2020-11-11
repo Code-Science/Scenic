@@ -1,17 +1,14 @@
 const mongoose = require('mongoose');
 
-let dbUrl = 'mongodb://localhost:27017/scenic';
-dbUrl =
-  'mongodb+srv://sunlight:electron@cluster0.945ij.azure.mongodb.net/places?retryWrites=true&w=majority';
+let url = process.env.dataBaseURL || 'mongodb://localhost:27017/scenic';
 
 const connect = () => {
   return new Promise((resolve, reject) => {
     if (process.env.NODE_ENV === 'test') {
-      dbUrl =
-        'mongodb+srv://sunlight:electron@cluster0.945ij.azure.mongodb.net/tests?retryWrites=true&w=majority';
+      url = 'mongodb://localhost:27017/tests';
     }
     mongoose
-      .connect(dbUrl, {
+      .connect(url, {
         useNewUrlParser: true,
         useCreateIndex: true,
         useUnifiedTopology: true,
