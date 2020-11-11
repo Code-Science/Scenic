@@ -1,4 +1,4 @@
-### SCENIC
+# SCENIC
 
 ## General Description:
 
@@ -10,18 +10,30 @@ Node.js, Express, Ejs templates, Mongodb, Mongoose, Vanilla Javascript, Css ...
 
 ## Routes
 
-# Get
+### Get
+```javascript
+"/"
+```
+For rendering landing page.
 
-"/" For rendering landing page.
+```javascript
+"/places" 
+```
+For rendering Places page. It Displays all the places with title and picture.
 
-"/places" For rendering Places page. It Displays all the places with title and picture.
+```javascript
+"/places/:id" 
+```
+For rendering details about the selected place.
 
-"/places/:id" For rendering details about the selected place.
+### Post
+```javascript
+"/places/:id/comments"
+```
+For saving comment in mongodb database.
 
-# Post
-
-"/places/:id/comments" For saving comment in mongodb database.
-
-# Delete
-
-"/places/:id/comments/commentId" For deleting comment from database.
+### Delete
+```javascript
+"/places/:id/comments/commentId" 
+```
+For deleting comment from database.
